@@ -28,7 +28,10 @@ function GameObject(attributes){
 
 //This is the prototype method destroy()
 
+GameObject.prototype.destroy = function(){
+  return `${this.name} was removed from the game`
 
+}
 
 
 
@@ -50,8 +53,10 @@ function CharacterStats(childA){
 // Fruit.prototype.shipped = function(destination) {
 //   console.log(`Shipping ${this.name} to ${destination}`);
 // };
+  CharacterStats.prototype = Object.create(GameObject.prototype)
 
 CharacterStats.prototype.takeDamage = function(){
+
   return `${this.name} took damage`
   
 }
@@ -77,7 +82,7 @@ function Humanoid(ha){
 
   
 }
-
+  Humanoid.prototype = Object.create(CharacterStats.prototype);
  Humanoid.prototype.greet = function(){
   return `${this.name} offers a greeting in ${this.language}`
 }
