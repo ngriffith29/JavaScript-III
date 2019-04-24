@@ -18,35 +18,35 @@ function sayHi(hi) {
 // code example for Window Binding
 
 // Principle 2
+var hi = {
+    name: 'Nahtan',
+    age: 22,
+        sayName(){
+            console.log(this.name)
+        }
+};
 
-const Obj = {
-    
-    sayHello: function(name) {
-      console.log(`${this.greeting} my name is ${name}`);
-      console.log(this);
-    }
-  };
-  myObj.sayHello('Nathan');
+hi.sayName()
+
 
 // code example for Implicit Binding
 
 
 
 // Principle 3
-const sayNameFunc = obj => {
+const sayWhatsUp = obj => {
     obj.sayName = function() {
-      console.log(`Hello my name is ${this.name}`);
+      console.log(`hey whats up ${this.name}`);
       console.log(this);
     };
   };
-  const me = { name: 'Ryan' };
+  const me = { name: 'Nathan' };
   const you = { name: 'Freddy' };
-  sayNameFunc(me);
-  sayNameFunc(you);
+  sayWhatsUp(me);
+  sayWhatsUp(you);
   
   // Invoke Methods on our objects
-  me.sayName();
-  you.sayName();
+  
 
 
 // code example for New Binding
@@ -54,18 +54,17 @@ const sayNameFunc = obj => {
 // Principle 4
 
 
-function CordialPerson(greeter) {
-    this.greeting = 'Hello ';
-    this.greeter = greeter;
+function weirdPerson(weirdo) {
+    this.greeting = 'Hello I am weird ';
+    this.greeter = weirdo;
     this.speak = function() {
       console.log(this.greeting + this.greeter);
       console.log(this);
     };
   }
   
-  const jerry = new CordialPerson('Newman');
-  const newman = new CordialPerson('Jerry');
+  const jerry = new weirdPerson('Newman');
+  const newman = new weirdPerson('Jerry');
   
-  jerry.speak();
-  newman.speak();
-// code example for Explicit Binding
+  Bob.speak();
+  Andy.speak();
